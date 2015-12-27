@@ -1,9 +1,12 @@
 # Getting and Cleaning Data Course Project
 
 This repository contains two files in addition to this README file:
+
 * An R Script that downloads and converts the data set for the course project into readable data frames. The code is explained in its comments. This one script does all the work required for the assignment. It will write two files:
+
 1. The tidy data set produced in steps 1-4 of the assignment called tidy_data_simple.txt
 2. The tidy data set produced in step 5 of the assignment called tidy_data_means.txt
+
 * The corresponding codebook explaining the variables and what the script does.
 
 For further info please consult the code book.
@@ -14,6 +17,7 @@ Since the assignment asks for an explanation of what the code does, I have copie
 Attention: For performing the analysis in the run_analysis.R script you need to have the dplyr package installed.
 
 What the R script does is explained in the following steps. <i>The first two steps are commented out because apparently for grading these steps are not required.</i>
+
 1. Check if the current working directory is the correct working directory. If not, the working directory is - if necessary - created and set.
 2. If not already in the working directory the dataset is downloaded and extracted - unless this has been done before.
 3. All relevant files are read into R with read.table or readLines. Already at this stage the column names later extracted from the dataset are preprocessed.

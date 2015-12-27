@@ -12,6 +12,7 @@ The dataset was downloaded from https://d396qusza40orc.cloudfront.net/getdata%2F
 Attention: For performing the analysis in the run_analysis.R script you need to have the dplyr package installed.
 
 What the R script does is explained in the following steps. <i>The first two steps are commented out because apparently for grading these steps are not required.</i>
+
 1. Check if the current working directory is the correct working directory. If not, the working directory is - if necessary - created and set.
 2. If not already in the working directory the dataset is downloaded and extracted - unless this has been done before.
 3. All relevant files are read into R with read.table or readLines. Already at this stage the column names later extracted from the dataset are preprocessed.
