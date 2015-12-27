@@ -1,16 +1,18 @@
-# If already in folder getting_data_project, skip next two steps
-if(!grepl("getting_data_project",getwd())) {
-        # Set working directory to a fresh directory created for this purpose
-        if(!file.exists("getting_data_project")) {
-                dir.create("getting_data_project")
-                }
-        # then set working directory
-        setwd("getting_data_project")
-}
-# Downloaded the file to working directory if it doesn't exist already
-if(!file.exists("course_project_dataset.zip")) {
-        download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",destfile= "course_project_dataset.zip", method="curl")
-}
+## Apparently downloading the content and setting the working directory is not part of the assignment. 
+## Should you not have the dataset in your working directory please uncomment the following lines.
+## If already in folder getting_data_project, skip next two steps
+#if(!grepl("getting_data_project",getwd())) {
+#        # Set working directory to a fresh directory created for this purpose
+#        if(!file.exists("getting_data_project")) {
+#                dir.create("getting_data_project")
+#                }
+#        # then set working directory
+#        setwd("getting_data_project")
+#}
+## Downloaded the file to working directory if it doesn't exist already
+#if(!file.exists("course_project_dataset.zip")) {
+#        download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",destfile= "course_project_dataset.zip", method="curl")
+#}
 # Unzip the file if not done yet.
 if(!file.exists("UCI HAR Dataset")) {
         unzip("course_project_dataset.zip")
@@ -70,5 +72,5 @@ additional_data_set <- group_by(clean_data_set,subject,activity)
 additional_data_set <- summarise_each(additional_data_set,funs(mean),-one_of("subject","activity","set"))
 colnames(additional_data_set)[4:68] <- paste0("meanof",colnames(additional_data_set)[4:68])
 
-write.table(clean_data_set,"tidy_data_simple.txt")
-write.table(additional_data_set,"tidy_data_means.txt")
+write.table(clean_data_set,"tidy_data_simple.txt", row.names = FALSE)
+write.table(additional_data_set,"tidy_data_means.txt",row.names = FALSE)
